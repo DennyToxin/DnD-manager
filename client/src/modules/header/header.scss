@@ -1,0 +1,39 @@
+.header
+{
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: black;
+  
+  &__brand{
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__brand-text
+  {
+    font-family: "Montserrat";
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    user-select: none;
+  }
+
+  &__menu{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  &__menu-link
+  {
+    font-family: "Montserrat";
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    user-select: none;
+    cursor: pointer;
+  }
+}

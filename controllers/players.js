@@ -16,9 +16,6 @@ const all = async (req, res) => {
         userId: req.user.id,
       },
     });
-    if (players.length === 0) {
-      res.status(404).json({ message: "No players found" });
-    }
     res.status(200).json(players);
   } catch (error) {
     res.status(500).json({ message: "Failed to get players" });
@@ -70,11 +67,11 @@ const remove = async (req, res) => {
 };
 
 const edit = async (req, res) => {
-  try {
-    const data = req.body;
-    const { id } = req.params;
+  const data = req.body;
+  const { id } = req.params;
 
-    const player = await prisma.player.update({
+  try {
+    await prisma.player.update({
       where: {
         id,
       },

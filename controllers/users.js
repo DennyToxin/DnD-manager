@@ -35,7 +35,7 @@ const login = async (req, res) => {
         id: user.id,
         emeil: user.email,
         name: user.name,
-        token: jwt.sign({ id: user.id }, sercret, { expiresIn: "1h" }),
+        token: jwt.sign({ id: user.id }, sercret, { expiresIn: "8h" }),
       });
     } else {
       return res.status(400).json({ message: "Invalid email or password" });
