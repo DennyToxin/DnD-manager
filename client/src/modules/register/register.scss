@@ -1,0 +1,65 @@
+.register
+{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__form-wrapper {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    border-radius: 8px;
+  }
+
+  &__form-title {
+    margin-bottom: 16px;
+    text-align: center;
+    font-family: "Montserrat";
+    font-size: 32px;
+    font-weight: 600;
+    color: white;
+    user-select: none;
+  }
+
+  &__form {
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__button-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__link {
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+  }
+
+  &__form-button {
+    padding: 8px;
+    border-radius: 8px;
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 400;
+    color: black;
+    background-color: white;
+    transition: all ease-in-out 0.2s;
+    outline: 1px solid white;
+    outline-offset: -1px;
+
+    &:hover {
+      cursor: pointer;
+      outline: 1px solid #4096FF;
+      outline-offset: -1px;
+    }
+  }
+}

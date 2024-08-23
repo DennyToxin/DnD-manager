@@ -1,0 +1,142 @@
+.players
+{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+
+  &__list-wrapper
+  {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+  }
+
+  &__add-button
+  {
+    margin-bottom: 16px;
+    font-family: "Montserrat";
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  &__list
+  {
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__list-item
+  {
+    gap: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__list-item-name
+  {
+    font-family: "Montserrat";
+    font-size: 32px;
+    font-weight: 600;
+    color: white;
+    user-select: none;
+  }
+
+  &__list-item-race
+  {
+    font-family: "Montserrat";
+    font-size: 32px;
+    font-weight: 600;
+    color: white;
+    user-select: none;
+  }
+}
+
+.player-id
+{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+
+  &__header
+  {
+    gap: 1rex;
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__item
+  {
+    font-family: "Inter";
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    user-select: none;
+  }
+
+  &__item-desc
+  {
+    font-family: "Montserrat";
+    font-size: 26px;
+    font-weight: 600; 
+    color: white;
+    user-select: none;
+  }
+
+  &__image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  &__button
+  {
+    font-family: "Montserrat";
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  &__utils
+  {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  &__edit
+  {
+    font-family: "Montserrat";
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(46, 95, 151);
+    user-select: none;
+    cursor: pointer;
+  }
+
+  &__delete
+  {
+    font-family: "Montserrat";
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(173, 38, 38);
+    user-select: none;
+    cursor: pointer;
+  }
+}
