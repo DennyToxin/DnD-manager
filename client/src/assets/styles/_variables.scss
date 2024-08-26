@@ -1,0 +1,74 @@
+:root
+{
+  //Dark theme
+  --dk-background-primary: #a3b18a;
+  --dk-background-secondary: #588157;
+
+  --dk-transparent-primary: rgb(163, 177, 138, 0.5);
+  --dk-transparent-secondary: rgb(88, 129, 87, 0.6);
+
+  --dk-tablet-primary: rgb(231, 228, 223, 0.7);
+  --dk-tablet-secondary: rgb(105, 105, 105, 0.8);
+
+  --dk-focus-tablet-primary: rgb(161, 161, 161);
+  --dk-focus-tablet-secondary: rgb(105, 105, 105);
+
+  --dk-font: #f6fff8;
+
+  --dk-focus-primary: #007991;
+  --dk-focus-secondary: #222e50;
+  --dk-focus-tertiary: #4ecdc4;
+
+  --dk-normal-primary: #00afb9;
+  --dk-normal-secondary: #0081a7;
+
+  --dk-danger-primary: #c1121f;
+  --dk-danger-secondary: #780000;
+
+  --dk-sucess-primary: #6a994e;
+  --dk-sucess-secondary: #386641;
+
+
+
+  //Light theme
+  --lt-background-primary: #8FBB99;
+  --lt-background-secondary: #595A4A;
+  --lt-font: #363635;
+  --lt-focus-primary: #81E979;
+  --lt-focus-secondary: #B0FE76;
+}
+
+/*
+:root
+{
+  //Dark theme
+  --dk-background-primary: #4A525A;
+  --dk-background-secondary: #24272B;
+  --dk-font: #24272B;
+  --dk-focus-primary: #004BA8;
+  --dk-focus-secondary: #3E78B2;
+
+  //Light theme
+  --lt-background-primary: #8FBB99;
+  --lt-background-secondary: #595A4A;
+  --lt-font: #363635;
+  --lt-focus-primary: #81E979;
+  --lt-focus-secondary: #B0FE76;
+}
+
+[data-theme="dark"] {
+  --background-primary: var(--dk-background-primary);
+  --background-secondary: var(--dk-background-secondary);
+  --font: var(--dk-font);
+  --focus-primary: var(--dk-focus-primary);
+  --focus-secondary: var(--dk-focus-secondary);
+}
+
+[data-theme="light"] {
+  --background-primary: var(--lt-background-primary);
+  --background-secondary: var(--lt-background-secondary);
+  --font: var(--lt-font);
+  --focus-primary: var(--lt-focus-primary);
+  --focus-secondary: var(--lt-focus-secondary);
+}
+*/

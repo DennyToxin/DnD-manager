@@ -38,8 +38,9 @@ export default function Register() {
   return (
     <Layout>
       <div className="register">
+        <img className="background-image" src="src/assets/images/fields.jpeg" />
         <div className="register__form-wrapper">
-          <h1 className="register__form-title">register</h1>
+          <h1 className="register__form-title">Register</h1>
           <Form onFinish={register}>
             <FormInput name="name" placeholder="name" />
             <FormInput type="email" name="email" placeholder="email" />
@@ -52,15 +53,14 @@ export default function Register() {
               <button className="register__form-button" type="submit">
                 register
               </button>
-              <p className="register__link">already have an account?</p>
-              <Link className="register__link" to={Paths.login}>
-                login
+              <Link to={Paths.login}>
+                <p className="register__link">already have an account?</p>
               </Link>
             </div>
           </Form>
+          <ErrorMessage message={error} />
         </div>
       </div>
-      <ErrorMessage message={error} />
     </Layout>
   );
 }

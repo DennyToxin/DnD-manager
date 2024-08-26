@@ -1,5 +1,6 @@
-import { useNavigate, useParams } from "react-router-dom";
 import "./status.scss";
+import sands2 from "../../assets/images/sands2.jpeg";
+import { useNavigate, useParams } from "react-router-dom";
 import { Paths } from "../../path";
 import Layout from "../layout/layout";
 
@@ -19,15 +20,18 @@ export default function Status() {
 
   return (
     <Layout>
+      <img className="background-image" src={sands2} />
       <div className="status">
-        <h1 className="status__title">
-          {status
-            ? Statuses[status as keyof typeof Statuses]
-            : "Something went wrong"}
-        </h1>
-        <button className="status__button" onClick={toHome}>
-          Back
-        </button>
+        <div className="status__wrapper">
+          <h1 className="status__title">
+            {status
+              ? Statuses[status as keyof typeof Statuses]
+              : "Something went wrong"}
+          </h1>
+          <button className="status__button" onClick={toHome}>
+            Back
+          </button>
+        </div>
       </div>
     </Layout>
   );

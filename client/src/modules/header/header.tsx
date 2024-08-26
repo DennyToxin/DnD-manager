@@ -1,4 +1,5 @@
 import "./header.scss";
+import dnd from "../../assets/images/DnD.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { Paths } from "../../path";
 import { useDispatch, useSelector } from "react-redux";
@@ -15,29 +16,26 @@ export default function Header() {
     navigate(Paths.login);
   };
 
-  const toPlayers = () => {
-    navigate(Paths.player);
-  };
-
   return (
     <div className="header">
       <div className="header__brand">
+        <img className="header__brand-logo" src={dnd} />
         <Link to={Paths.home}>
-          <span className="header__brand-text">DnD manager</span>
+          <p className="header__brand-text">DnD manager</p>
         </Link>
       </div>
       <div className="header__menu">
         {user ? (
-          <span className="header__menu-link" onClick={logoutTrigger}>
+          <p className="header__menu-link" onClick={logoutTrigger}>
             logout
-          </span>
+          </p>
         ) : (
           <>
             <Link to={Paths.login}>
-              <span className="header__menu-link">login</span>
+              <p className="header__menu-link">login</p>
             </Link>
             <Link to={Paths.register}>
-              <span className="header__menu-link">register</span>
+              <p className="header__menu-link">register</p>
             </Link>
           </>
         )}

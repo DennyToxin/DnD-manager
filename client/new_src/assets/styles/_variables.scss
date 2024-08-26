@@ -1,0 +1,32 @@
+:root
+{
+  //Dark theme
+  --dk-background-primary: #4A525A;
+  --dk-background-secondary: #24272B;
+  --dk-font: #24272B;
+  --dk-focus-primary: #004BA8;
+  --dk-focus-secondary: #3E78B2;
+
+  //Light theme
+  --lt-background-primary: #8FBB99;
+  --lt-background-secondary: #595A4A;
+  --lt-font: #363635;
+  --lt-focus-primary: #81E979;
+  --lt-focus-secondary: #B0FE76;
+}
+
+[data-theme="dark"] {
+  --background-primary: var(--dk-background-primary);
+  --background-secondary: var(--dk-background-secondary);
+  --font: var(--dk-font);
+  --focus-primary: var(--dk-focus-primary);
+  --focus-secondary: var(--dk-focus-secondary);
+}
+
+[data-theme="light"] {
+  --background-primary: var(--lt-background-primary);
+  --background-secondary: var(--lt-background-secondary);
+  --font: var(--lt-font);
+  --focus-primary: var(--lt-focus-primary);
+  --focus-secondary: var(--lt-focus-secondary);
+}

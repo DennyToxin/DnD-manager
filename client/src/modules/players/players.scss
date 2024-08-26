@@ -1,142 +1,330 @@
-.players
-{
-  width: 100vw;
-  height: 100vh;
+.players {
+  width: 100%;
+  height: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: start;
   align-items: center;
-  background-color: black;
 
-  &__list-wrapper
-  {
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 8px;
-  }
-
-  &__add-button
-  {
-    margin-bottom: 16px;
-    font-family: "Montserrat";
-    font-size: 16px;
+  &__title {
+    margin-top: 1rem;
+    font-family: "Baskerville";
+    font-size: 2rem;
     font-weight: 600;
-    color: white;
-    user-select: none;
-    cursor: pointer;
+    color: var(--dk-font);
   }
 
-  &__list
-  {
-    gap: 16px;
+  &__list-wrapper {
+    overflow-y: scroll;
+    margin: 1rem;
+    max-width: 800px;
+    width: 90%;
+    height: 80vh;
     display: flex;
     flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 12px;
+    scrollbar-width: none;
+
+    background-color: transparent;
+    background-image: linear-gradient(
+      120deg,
+      var(--dk-transparent-primary),
+      var(--dk-transparent-secondary));
+    backdrop-filter: blur(8px);
   }
 
-  &__list-item
-  {
-    gap: 16px;
+  &__add-button {
+    width: fit-content;
+    text-align: center;
+    font-family: "Inter";
+    padding: 0.5rem 2rem;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: var(--dk-font);
+    background-color: var(--dk-focus-primary);
+    transition: all 0.2s ease-in-out;
+
+    &:first-child {
+      margin-top: 1rem;
+    }
+
+    &:hover {
+      color: var(--dk-focus-primary);
+      background-color: var(--dk-font);
+    }
+
+    &:active {
+      color: var(--dk-focus-secondary);
+      background-color: var(--dk-font);
+    }
+  }
+
+  .player-item {
+    margin: 0px 1rem;
+    padding: 1rem;
+    width: calc(100% - 2rem);
     display: flex;
     flex-direction: row;
-    align-items: center;
-  }
+    gap: 2rem;
+    border-radius: 12px;
+    background-color: transparent;
+    background-image: linear-gradient(
+      120deg,
+      var(--dk-tablet-primary),
+      var(--dk-tablet-secondary));
+    backdrop-filter: blur(8px);
+    cursor: pointer;
 
-  &__list-item-name
-  {
-    font-family: "Montserrat";
-    font-size: 32px;
-    font-weight: 600;
-    color: white;
-    user-select: none;
-  }
+    &:hover {
+      .player-item__name,
+      .player-item__race,
+      .player-item__class {
+        transition: all 0.3s ease-in-out;
+        color: var(--dk-focus-primary);
+      }
+    }
 
-  &__list-item-race
-  {
-    font-family: "Montserrat";
-    font-size: 32px;
-    font-weight: 600;
-    color: white;
-    user-select: none;
+    &:first-child {
+      margin-top: 1rem;
+    }
+
+    &:last-of-type {
+      margin-bottom: 1rem;
+    }
+
+    &__image {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    &__info {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    &__name-field {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+    }
+
+    &__name {
+      transition: all 0.3s ease-in-out;
+      font-family: "Baskerville";
+      font-size: clamp(1.5rem, 5vw, 3rem);
+      font-weight: 550;
+      color: var(--dk-font);
+    }
+
+    &__race {
+      transition: all 0.3s ease-in-out;
+      font-family: "Inter";
+      font-size: clamp(1rem, 5vw, 2rem);
+      font-weight: 300;
+      color: var(--dk-font);
+    }
+
+    &__class {
+      transition: all 0.3s ease-in-out;
+      font-family: "Inter";
+      font-size: clamp(1rem, 5vw, 2rem);
+      font-weight: 300;
+      color: var(--dk-font);
+    }
+
+    &__text {
+      padding: 1rem;
+      font-family: "Baskerville";
+      font-size: clamp(1.5rem, 5vw, 3rem);
+      font-weight: 550;
+      color: var(--dk-font);
+    }
   }
 }
 
-.player-id
-{
-  width: 100vw;
-  height: 100vh;
+@media screen and (max-width: 760px) {
+  .player-item {
+    &__image {
+      display: none;
+    }
+  }
+}
+
+.player-id {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 16px;
   justify-content: center;
   align-items: center;
-  background-color: black;
 
-  &__header
-  {
-    gap: 1rex;
+  &__wrapper {
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+
+    background-color: transparent;
+    background-image: linear-gradient(
+      120deg,
+      var(--dk-transparent-primary),
+      var(--dk-transparent-secondary));
+    backdrop-filter: blur(8px);
+  }
+
+  &__name-field {
     display: flex;
     flex-direction: row;
+    gap: 1rem;
   }
 
-  &__item
-  {
+  &__name {
+    font-family: "Baskerville";
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    font-weight: 550;
+    color: var(--dk-font);
+  }
+
+  &__race-field {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  
+  &__race {
     font-family: "Inter";
-    font-size: 20px;
-    font-weight: 500;
-    color: white;
-    user-select: none;
+    font-size: clamp(1rem, 5vw, 2rem);
+    font-weight: 300;
+    color: var(--dk-font);
   }
 
-  &__item-desc
-  {
-    font-family: "Montserrat";
-    font-size: 26px;
-    font-weight: 600; 
-    color: white;
-    user-select: none;
+  &__class-field {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  
+  &__class {
+    font-family: "Inter";
+    font-size: clamp(1rem, 5vw, 2rem);
+    font-weight: 300;
+    color: var(--dk-font);
+  }
+
+  &__desc-field {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  
+  &__desc {
+    font-family: "Inter";
+    font-size: clamp(1rem, 5vw, 2rem);
+    font-weight: 300;
+    color: var(--dk-font);
+  }
+
+  &__image-field {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
   }
 
   &__image {
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 8px;
   }
 
-  &__button
-  {
-    font-family: "Montserrat";
-    font-size: 16px;
-    font-weight: 600;
-    color: white;
-    user-select: none;
-    cursor: pointer;
+  &__button {
+    position: absolute;
+    top: 3.5rem;
+    left: 1rem;
+    width: fit-content;
+    text-align: center;
+    font-family: "Inter";
+    padding: 0.5rem 2rem;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: var(--dk-font);
+    background-color: var(--dk-focus-primary);
+
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      color: var(--dk-focus-primary);
+      background-color: var(--dk-font);
+    }
+
+    &:active {
+      color: var(--dk-focus-secondary);
+      background-color: var(--dk-font);
+    }
   }
 
-  &__utils
-  {
+  &__utils {
     display: flex;
     flex-direction: row;
     gap: 16px;
   }
 
-  &__edit
-  {
-    font-family: "Montserrat";
-    font-size: 16px;
-    font-weight: 600;
-    color: rgb(46, 95, 151);
-    user-select: none;
-    cursor: pointer;
+  &__edit {
+    width: fit-content;
+    text-align: center;
+    font-family: "Inter";
+    padding: 0.5rem 2rem;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: var(--dk-font);
+    background-color: var(--dk-normal-primary);
+
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      color: var(--dk-normal-primary);
+      background-color: var(--dk-font);
+    }
+
+    &:active {
+      color: var(--dk-normal-secondary);
+      background-color: var(--dk-font);
+    }
   }
 
-  &__delete
-  {
-    font-family: "Montserrat";
-    font-size: 16px;
-    font-weight: 600;
-    color: rgb(173, 38, 38);
-    user-select: none;
+  &__delete {
+    width: fit-content;
+    text-align: center;
+    font-family: "Inter";
+    padding: 0.5rem 2rem;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: var(--dk-font);
+    background-color: var(--dk-danger-primary);
     cursor: pointer;
+
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      color: var(--dk-danger-primary);
+      background-color: var(--dk-font);
+    }
+
+    &:active {
+      color: var(--dk-danger-secondary);
+      background-color: var(--dk-font);
+    }
   }
 }
