@@ -6,7 +6,8 @@
     "start": "node ./bin/www",
     "server": "nodemon ./bin/www",
     "client": "npm run dev --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "client-install": "npm install --prefix client",
+    "dnd-manager": "concurrently \"npm run server\" \"npm run client\""
   },
   "dependencies": {
     "@prisma/client": "^5.18.0",
