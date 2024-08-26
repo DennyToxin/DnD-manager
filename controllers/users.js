@@ -1,6 +1,7 @@
 const { prisma } = require("../prisma/prisma-client");
 const brypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const { JWT_SECRET } = require("../settings");
 
 /**
  * @description Handles user login functionality.
@@ -28,7 +29,7 @@ const login = async (req, res) => {
     const isPasswordCorrect =
       user && (await brypt.compare(password, user.password));
 
-    const sercret = process.env.JWT_SECRET;
+    const sercret = JWT_SECRET;
 
     if (user && isPasswordCorrect && sercret) {
       res.status(200).json({
@@ -82,7 +83,7 @@ const register = async (req, res) => {
       },
     });
 
-    const sercret = process.env.JWT_SECRET;
+    const sercret = JWT_SECRET;
 
     if ((user, sercret)) {
       res.status(201).json({
