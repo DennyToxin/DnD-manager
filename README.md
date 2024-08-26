@@ -33,3 +33,11 @@ DnD Manager is a convenient app for managing characters in role-playing games li
 ![ScreenShot](./images/view_3.png)
 * View existing characters, edit them, or delete them.
 ![ScreenShot](./images/view_4.png)
+
+## Soon
+* New design
+* Switching color schemes
+* New character input fields
+* Features
+* Abilities
+* Inventory and items
