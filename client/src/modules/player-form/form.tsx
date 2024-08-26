@@ -1,7 +1,7 @@
 import "./form.scss";
 import { Player } from "@prisma/client";
 import { Form } from "antd";
-import { FormInput } from "../../components/form-input";
+import { DescriptionInput, FormInput } from "../../components/form-input";
 import { ErrorMessage } from "../error/error";
 import { useState } from "react";
 
@@ -49,12 +49,7 @@ export default function PlayerForm({
               placeholder="Class"
               required={false}
             />
-            <FormInput
-              type="text"
-              name="description"
-              placeholder="Description"
-              required={false}
-            />
+            <DescriptionInput name="description" placeholder="Description" />
             <button className="player-form__button" type="submit">
               {btnText}
             </button>

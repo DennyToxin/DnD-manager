@@ -29,6 +29,25 @@ export function FormInput({
   );
 }
 
+type DescriptionInputProps = {
+  name: string;
+  placeholder: string;
+};
+
+export function DescriptionInput({
+  name,
+  placeholder,
+}: DescriptionInputProps) {
+  return (
+    <Form.Item
+      name={name}
+      shouldUpdate={true}
+    >
+      <Input.TextArea rows={4} placeholder={placeholder} />
+    </Form.Item>
+  )
+}
+
 type PasswordInputProps = {
   name: string;
   placeholder: string;
