@@ -1,18 +1,21 @@
 import { Form, Input } from "antd";
 import { NamePath } from "antd/es/form/interface";
+import { ChangeEventHandler } from "react";
 
 type FormInputProps = {
   name: string;
   placeholder: string;
   type?: string;
   required?: boolean;
+  func?: ChangeEventHandler<HTMLInputElement>;
 };
 
 export function FormInput({
   name,
   placeholder,
   type = "text",
-  required = true
+  required = true,
+  func
 }: FormInputProps) {
   return (
     <Form.Item
@@ -21,7 +24,7 @@ export function FormInput({
       required = {required}
       rules={[{ required, message: "this field is required" }]}
     >
-      <Input placeholder={placeholder} type={type} />
+      <Input placeholder={placeholder} type={type} onChange={func} />
     </Form.Item>
   );
 }
@@ -57,7 +60,7 @@ export function PasswordInput({
                 return Promise.resolve();
               }
               return Promise.reject(
-                new Error("The two passwords that you entered do not match!")
+                new Error("The passwords do not match!")
               );
             } else {
               if (value.length < 6) {

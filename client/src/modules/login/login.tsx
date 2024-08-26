@@ -21,19 +21,22 @@ export default function Login() {
     } catch (err) {
       const isError = isErrorWithMessage(err);
 
-      if (isError) {
-        setError(err.data.message);
-      } else {
-        setError("An unexpected error occurred");
-      }
+      setTimeout(() => {
+        if (isError) {
+          setError(err.data.message);
+        } else {
+          setError("An unexpected error occurred");
+        }
+      }, 1000);
     }
   };
 
   return (
     <Layout>
+      <img className="background-image" src="src/assets/images/fields.jpeg"/>
       <div className="login">
         <div className="login__form-wrapper">
-          <h1 className="login__form-title">login</h1>
+          <h1 className="login__form-title">Login</h1>
           <Form onFinish={login}>
             <FormInput type="email" name="email" placeholder="email" />
             <PasswordInput name="password" placeholder="password" />
@@ -41,9 +44,8 @@ export default function Login() {
               <button className="login__form-button" type="submit">
                 login
               </button>
-              <p className="login__link">no account yet?</p>
-              <Link className="login__link" to={Paths.register}>
-                register
+              <Link to={Paths.register}>
+                <p className="login__link">no account yet?</p>
               </Link>
             </div>
             <ErrorMessage message={error} />

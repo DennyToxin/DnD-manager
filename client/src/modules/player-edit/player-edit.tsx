@@ -1,5 +1,6 @@
-import { useNavigate, useParams } from "react-router-dom";
 import "./player.scss";
+import rocks2 from "../../assets/images/rocks2.jpeg";
+import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import { useEditPlayerMutation, useGetPlayerQuery } from "../../share/player";
 import Layout from "../layout/layout";
@@ -41,9 +42,9 @@ export default function PlayerEdit() {
 
   return (
     <Layout>
+      <img className="background-image" src={rocks2}/>
       <div className="player-edit">
         <PlayerForm
-          title="Edit player"
           btnText="Edit"
           error={error}
           player={data}

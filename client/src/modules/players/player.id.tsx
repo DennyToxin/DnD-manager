@@ -1,5 +1,6 @@
-import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import "./players.scss";
+import sands from "../../assets/images/sands.jpeg";
+import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import { useGetPlayerQuery, useRemovePlayerMutation } from "../../share/player";
 import { useSelector } from "react-redux";
@@ -45,62 +46,68 @@ export const PlayerId = () => {
 
   return (
     <Layout>
+      <img className="background-image" src={sands} />
       <div className="player-id">
-        {user?.id === data.userId && (
-          <div className="player-id__utils">
-            <Link to={`${Paths.playerEdit}/${data.id}`}>
-              <span className="player-id__edit">Edit</span>
-            </Link>
-            <span
-              className="player-id__delete"
-              onClick={() => setIsModalVisible(true)}
-            >
-              Delete
-            </span>
+
+        <div className="player-id__wrapper">
+          <div className="player-id__name-field">
+            <p className="player-id__name">{data.firstName}</p>
+            {data.lastName && (
+              <p className="player-id__name">{data.lastName}</p>
+            )}
           </div>
-        )}
-        <div className="player-id__header">
-          <div className="player-id__item">{data.firstName}</div>
-          {data.lastName && (
-            <div className="player-id__item">{data.lastName}</div>
+          <div className="player-id__race-field">
+            <p className="player-id__race">
+              race: {data.race ? data.race : "Unknown"}
+            </p>
+          </div>
+          <div className="player-id__class-field">
+            <p className="player-id__class">
+              class: {data.class ? data.class : "Unknown"}
+            </p>
+          </div>
+          <div className="player-id__image-field">
+            <img
+              className="player-id__image"
+              src={
+                data.image ??
+                "https://avatars.mds.yandex.net/i?id=7dfcc2bc726f9c3bdc2d5478d47294e9_l-5315199-images-thumbs&n=13"
+              }
+              alt="player"
+            />
+          </div>
+          <div className="player-id__desc-field">
+            <p className="player-id__desc">
+              description: {data.description ? data.description : "Unknown"}
+            </p>
+          </div>
+
+          <ErrorMessage message={error} />
+          <Modal
+            title="Delete player"
+            open={isModalVisible}
+            onOk={handleDeletePlayer}
+            onCancel={() => setIsModalVisible(false)}
+            okText="Confirm"
+            cancelText="Cancel"
+          >
+            Do you really want to remove the player?
+          </Modal>
+
+          {user?.id === data.userId && (
+            <div className="player-id__utils">
+              <Link to={`${Paths.playerEdit}/${data.id}`}>
+                <p className="player-id__edit">Edit</p>
+              </Link>
+              <p
+                className="player-id__delete"
+                onClick={() => setIsModalVisible(true)}
+              >
+                Delete
+              </p>
+            </div>
           )}
         </div>
-        {data.race && (
-          <>
-            <span className="player-id__item-desc">Belonging:</span>
-            <div className="player-id__item">{data.race}</div>
-          </>
-        )}
-        {data.class && (
-          <>
-            <span className="player-id__item-desc">Class:</span>
-            <div className="player-id__item">{data.class}</div>
-          </>
-        )}
-        {data.description && (
-          <>
-            <span className="player-id__item-desc">Description:</span>
-            <div className="player-id__item">{data.description}</div>
-          </>
-        )}
-        {data.image && (
-          <img className="player-id__image" src={data.image} alt="No image" />
-        )}
-
-        <Link to={Paths.home}>
-          <span className="player-id__button">Back</span>
-        </Link>
-        <ErrorMessage message={error} />
-        <Modal
-          title="Delete player"
-          open={isModalVisible}
-          onOk={handleDeletePlayer}
-          onCancel={() => setIsModalVisible(false)}
-          okText="Confirm"
-          cancelText="Cancel"
-        >
-          Do you really want to remove the player?
-        </Modal>
       </div>
     </Layout>
   );

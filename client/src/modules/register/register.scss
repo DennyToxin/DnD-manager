@@ -1,65 +1,91 @@
 .register
 {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+
   display: flex;
   justify-content: center;
   align-items: center;
 
   &__form-wrapper {
-    padding: 32px;
+    padding: 24px;
+
     display: flex;
     flex-direction: column;
-    background-color: black;
+    justify-content: center;
+    align-items: center;
     border-radius: 8px;
+    gap: 24px;
+
+    background-color: transparent;
+    background-image: linear-gradient(
+      120deg,
+      var(--dk-transparent-primary),
+      var(--dk-transparent-secondary));
+    backdrop-filter: blur(8px);
   }
 
   &__form-title {
-    margin-bottom: 16px;
-    text-align: center;
-    font-family: "Montserrat";
-    font-size: 32px;
-    font-weight: 600;
-    color: white;
-    user-select: none;
-  }
-
-  &__form {
-    gap: 16px;
-    display: flex;
-    flex-direction: column;
+    font-family: "Baskerville";
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--dk-font);
   }
 
   &__button-wrapper {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 1rem;
+  }
+
+  &__form-button {
+    width: fit-content;
+    text-align: center;
+    font-family: "Inter";
+    padding: 0.5rem 2rem;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: var(--dk-font);
+    background-color: var(--dk-focus-primary);
+
+    transition: all .2s ease-in-out;
+    &:hover {
+      color: var(--dk-focus-primary);
+      background-color: var(--dk-font);
+    }
+
+    &:active {
+      color: var(--dk-focus-secondary);
+      background-color: var(--dk-font);
+    }
+  }
+
+  &__link-wrapper {
+    display: flex;
+    gap: .5rem;
+  }
+
+  &__link-label {
+    font-family: "Inter";
+    font-size: 1.5rem;
+    color: var(--dk-font);
   }
 
   &__link {
     font-family: "Inter";
-    font-size: 16px;
-    font-weight: 400;
-    color: white;
-  }
+    font-size: 1.5rem;
+    color: var(--dk-font);
 
-  &__form-button {
-    padding: 8px;
-    border-radius: 8px;
-    font-family: "Inter";
-    font-size: 16px;
-    font-weight: 400;
-    color: black;
-    background-color: white;
-    transition: all ease-in-out 0.2s;
-    outline: 1px solid white;
-    outline-offset: -1px;
-
+    transition: all .2s ease-in-out;
     &:hover {
-      cursor: pointer;
-      outline: 1px solid #4096FF;
-      outline-offset: -1px;
+      color: var(--dk-focus-primary);
+    }
+
+    &:active {
+      color: var(--dk-focus-secondary);
     }
   }
 }

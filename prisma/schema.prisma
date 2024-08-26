@@ -48,7 +48,7 @@ model Items {
   image       String?
   type        String?
   count       Int?
-  
-  Player      Player @relation(fields: [playerId], references: [id])
-  playerId    String
+
+  Player   Player @relation(fields: [playerId], references: [id])
+  playerId String
 }

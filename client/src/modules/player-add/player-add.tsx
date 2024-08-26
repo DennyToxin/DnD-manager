@@ -1,4 +1,5 @@
 import "./player.scss";
+import rocks from "../../assets/images/rocks.jpeg";
 import Layout from "../layout/layout";
 import PlayerForm from "../player-form/form";
 import { useEffect, useState } from "react";
@@ -39,9 +40,9 @@ export default function PlayerAdd() {
 
   return (
     <Layout>
+      <img className="background-image" src={rocks}/>
       <div className="player-add">
         <PlayerForm
-          title="Add Player"
           btnText="Add Player"
           onFinish={handleAddPlayer}
           error={error}
