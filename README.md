@@ -1,3 +1,6 @@
+[![ru](https://img.shields.io/badge/lang-ru-red.svg)](https://github.com/DennyToxin/DnD-manager/blob/main/README.ru.md)
+[![en](https://img.shields.io/badge/lang-en-green.svg)](https://github.com/DennyToxin/DnD-manager/blob/main/README.md)
+
 # DnD manager
 
 DnD Manager is a convenient app for managing characters in role-playing games like Dungeons & Dragons, Pathfinder, and others. It provides easy-to-use tools for creating, editing, and tracking characters.
